@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		E10EA6DD28A42DA300EFBF25 /* FlagImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = E10EA6DC28A42DA300EFBF25 /* FlagImage.swift */; };
 		E184D03A26A03D7300CCDC88 /* GuessTheFlagApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184D03926A03D7300CCDC88 /* GuessTheFlagApp.swift */; };
-		E184D03C26A03D7300CCDC88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184D03B26A03D7300CCDC88 /* ContentView.swift */; };
+		E184D03C26A03D7300CCDC88 /* MainSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184D03B26A03D7300CCDC88 /* MainSceneView.swift */; };
 		E184D03E26A03D7400CCDC88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E184D03D26A03D7400CCDC88 /* Assets.xcassets */; };
 		E184D04126A03D7400CCDC88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E184D04026A03D7400CCDC88 /* Preview Assets.xcassets */; };
 		E1B5CDA02A90A55100003633 /* DataGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5CD9F2A90A55100003633 /* DataGame.swift */; };
+		E1B5CDA22A90A7A400003633 /* GuessTheFlag.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5CDA12A90A7A400003633 /* GuessTheFlag.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		E10EA6DC28A42DA300EFBF25 /* FlagImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlagImage.swift; sourceTree = "<group>"; };
 		E184D03626A03D7300CCDC88 /* GuessTheFlag.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GuessTheFlag.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E184D03926A03D7300CCDC88 /* GuessTheFlagApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlagApp.swift; sourceTree = "<group>"; };
-		E184D03B26A03D7300CCDC88 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		E184D03B26A03D7300CCDC88 /* MainSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainSceneView.swift; sourceTree = "<group>"; };
 		E184D03D26A03D7400CCDC88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E184D04026A03D7400CCDC88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E184D04226A03D7400CCDC88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E1B5CD9F2A90A55100003633 /* DataGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGame.swift; sourceTree = "<group>"; };
+		E1B5CDA12A90A7A400003633 /* GuessTheFlag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuessTheFlag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +128,7 @@
 		E1B5CD9C2A90A43F00003633 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				E1B5CD9F2A90A55100003633 /* DataGame.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -133,7 +136,7 @@
 		E1B5CD9D2A90A44800003633 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				E184D03B26A03D7300CCDC88 /* ContentView.swift */,
+				E184D03B26A03D7300CCDC88 /* MainSceneView.swift */,
 				E10EA6DC28A42DA300EFBF25 /* FlagImage.swift */,
 			);
 			path = View;
@@ -142,7 +145,7 @@
 		E1B5CD9E2A90A45F00003633 /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
-				E1B5CD9F2A90A55100003633 /* DataGame.swift */,
+				E1B5CDA12A90A7A400003633 /* GuessTheFlag.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -216,10 +219,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E184D03C26A03D7300CCDC88 /* ContentView.swift in Sources */,
+				E184D03C26A03D7300CCDC88 /* MainSceneView.swift in Sources */,
 				E184D03A26A03D7300CCDC88 /* GuessTheFlagApp.swift in Sources */,
 				E1B5CDA02A90A55100003633 /* DataGame.swift in Sources */,
 				E10EA6DD28A42DA300EFBF25 /* FlagImage.swift in Sources */,
+				E1B5CDA22A90A7A400003633 /* GuessTheFlag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
