@@ -29,7 +29,7 @@ struct MainSceneView: View {
                 }
                 ForEach(0 ..< 3) { number in
                     Button(action: {
-                        self.flagTapped(number)
+                        guessTheFlag.flagTapped(number)
                         if guessTheFlag.data.correctAnswer == number {
                             withAnimation {
                                 animationAmount += 360
@@ -59,34 +59,8 @@ struct MainSceneView: View {
             }
         }
     }
+        
     
-    func flagTapped(_ number: Int) {
-        if number == guessTheFlag.data.correctAnswer {
-            guessTheFlag.data.scoreTitle = "Correct"
-            guessTheFlag.data.score += 1
-        } else {
-            guessTheFlag.data.scoreTitle = "Wrong"
-            if guessTheFlag.data.score > 0 {
-                guessTheFlag.data.score -= 1
-            }
-        }
-        
-        switch number {
-        case 0:
-            guessTheFlag.data.scoreTitle += "\n This is country name: \(guessTheFlag.data.countries[0])"
-        case 1:
-            guessTheFlag.data.scoreTitle += "\n This is country name: \(guessTheFlag.data.countries[1])"
-        case 2:
-            guessTheFlag.data.scoreTitle += "\n This is country name: \(guessTheFlag.data.countries[2])"
-        default:
-            break
-        }
-        
-        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-            guessTheFlag.data.showingScore = true
-        }
-        
-    }
     func askQuestion() {
         guessTheFlag.data.countries.shuffle()
         guessTheFlag.data.correctAnswer = Int.random(in: 0...2)
