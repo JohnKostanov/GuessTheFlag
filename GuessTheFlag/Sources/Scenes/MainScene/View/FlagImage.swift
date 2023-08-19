@@ -9,18 +9,17 @@ import SwiftUI
 
 struct FlagImage: View {
     
-    @Binding var animationAmount: Double
-    @Binding var opacityValue: Double
+    @ObservedObject var guessTheFlag: GuessTheFlag
     var country: String
-    var correctAnswer: Bool
+    var isCorrectAnswer: Bool
     
     var body: some View {
-        if correctAnswer {
+        if isCorrectAnswer {
             ImageContent(country: country)
-                .rotation3DEffect(.degrees(animationAmount), axis: (x: 1, y: 0, z: 0))
+                .rotation3DEffect(.degrees(guessTheFlag.animationAmount), axis: (x: 1, y: 0, z: 0))
         } else {
             ImageContent(country: country)
-                .opacity(opacityValue).animation(.easeInOut(duration: 1), value: opacityValue)
+                .opacity(guessTheFlag.opacityValue).animation(.easeInOut(duration: 1), value: guessTheFlag.opacityValue)
         }
     
     }

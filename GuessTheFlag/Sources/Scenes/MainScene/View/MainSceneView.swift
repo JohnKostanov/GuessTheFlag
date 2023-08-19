@@ -29,10 +29,9 @@ struct MainSceneView: View {
                         guessTheFlag.flagTapped(number)
                         
                     }) {
-                        FlagImage(animationAmount: $guessTheFlag.animationAmount,
-                                  opacityValue: $guessTheFlag.opacityValue,
+                        FlagImage(guessTheFlag: guessTheFlag,
                                   country: guessTheFlag.data.countries[number],
-                                  correctAnswer: guessTheFlag.data.correctAnswer == number ? true : false)
+                                  isCorrectAnswer: guessTheFlag.data.correctAnswer == number ? true : false)
                     }
                 }
                 
