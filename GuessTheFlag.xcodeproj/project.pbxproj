@@ -12,6 +12,7 @@
 		E184D03C26A03D7300CCDC88 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E184D03B26A03D7300CCDC88 /* ContentView.swift */; };
 		E184D03E26A03D7400CCDC88 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E184D03D26A03D7400CCDC88 /* Assets.xcassets */; };
 		E184D04126A03D7400CCDC88 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E184D04026A03D7400CCDC88 /* Preview Assets.xcassets */; };
+		E1B5CDA02A90A55100003633 /* DataGame.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1B5CD9F2A90A55100003633 /* DataGame.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		E184D03D26A03D7400CCDC88 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E184D04026A03D7400CCDC88 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		E184D04226A03D7400CCDC88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E1B5CD9F2A90A55100003633 /* DataGame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataGame.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,11 +56,8 @@
 		E184D03826A03D7300CCDC88 /* GuessTheFlag */ = {
 			isa = PBXGroup;
 			children = (
-				E184D03926A03D7300CCDC88 /* GuessTheFlagApp.swift */,
-				E184D03B26A03D7300CCDC88 /* ContentView.swift */,
-				E10EA6DC28A42DA300EFBF25 /* FlagImage.swift */,
-				E184D03D26A03D7400CCDC88 /* Assets.xcassets */,
-				E184D04226A03D7400CCDC88 /* Info.plist */,
+				E1B5CD972A90A1F700003633 /* Resources */,
+				E1B5CD992A90A37F00003633 /* Sources */,
 				E184D03F26A03D7400CCDC88 /* Preview Content */,
 			);
 			path = GuessTheFlag;
@@ -70,6 +69,82 @@
 				E184D04026A03D7400CCDC88 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		E1B5CD962A90A19100003633 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				E184D03926A03D7300CCDC88 /* GuessTheFlagApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		E1B5CD972A90A1F700003633 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5CD982A90A23200003633 /* Config */,
+				E184D03D26A03D7400CCDC88 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		E1B5CD982A90A23200003633 /* Config */ = {
+			isa = PBXGroup;
+			children = (
+				E184D04226A03D7400CCDC88 /* Info.plist */,
+			);
+			path = Config;
+			sourceTree = "<group>";
+		};
+		E1B5CD992A90A37F00003633 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5CD962A90A19100003633 /* App */,
+				E1B5CD9A2A90A3A600003633 /* Scenes */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		E1B5CD9A2A90A3A600003633 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5CD9B2A90A42400003633 /* MainScene */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E1B5CD9B2A90A42400003633 /* MainScene */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5CD9E2A90A45F00003633 /* ModelView */,
+				E1B5CD9D2A90A44800003633 /* View */,
+				E1B5CD9C2A90A43F00003633 /* Model */,
+			);
+			path = MainScene;
+			sourceTree = "<group>";
+		};
+		E1B5CD9C2A90A43F00003633 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E1B5CD9D2A90A44800003633 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E184D03B26A03D7300CCDC88 /* ContentView.swift */,
+				E10EA6DC28A42DA300EFBF25 /* FlagImage.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E1B5CD9E2A90A45F00003633 /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+				E1B5CD9F2A90A55100003633 /* DataGame.swift */,
+			);
+			path = ModelView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +218,7 @@
 			files = (
 				E184D03C26A03D7300CCDC88 /* ContentView.swift in Sources */,
 				E184D03A26A03D7300CCDC88 /* GuessTheFlagApp.swift in Sources */,
+				E1B5CDA02A90A55100003633 /* DataGame.swift in Sources */,
 				E10EA6DD28A42DA300EFBF25 /* FlagImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,7 +351,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
 				DEVELOPMENT_TEAM = 5K285D3RL3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				INFOPLIST_FILE = GuessTheFlag/Resources/Config/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -297,7 +373,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"GuessTheFlag/Preview Content\"";
 				DEVELOPMENT_TEAM = 5K285D3RL3;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = GuessTheFlag/Info.plist;
+				INFOPLIST_FILE = GuessTheFlag/Resources/Config/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
