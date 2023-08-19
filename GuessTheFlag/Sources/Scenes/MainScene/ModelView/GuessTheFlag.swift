@@ -10,6 +10,9 @@ import SwiftUI
 class GuessTheFlag: ObservableObject { 
     @Published var data = DataGame()
     
+    @Published var animationAmount = 0.0
+    @Published var opacityValue = 1.0
+    
     
     func flagTapped(_ number: Int) {
         if number == data.correctAnswer {
@@ -33,9 +36,22 @@ class GuessTheFlag: ObservableObject {
             break
         }
         
+        if data.correctAnswer == number {
+            withAnimation {
+                animationAmount += 360
+            }
+        }
+        opacityValue = 0.2
+        
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) { [unowned self] in
             data.showingScore = true
         }
+    }
+    
+    func askQuestion() {
+        data.countries.shuffle()
+        data.correctAnswer = Int.random(in: 0...2)
+        opacityValue = 1.0
     }
 }
 

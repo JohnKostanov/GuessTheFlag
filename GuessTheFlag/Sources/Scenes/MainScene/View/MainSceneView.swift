@@ -11,9 +11,6 @@ struct MainSceneView: View {
     
     @StateObject private var guessTheFlag = GuessTheFlag()
     
-    @State var animationAmount = 0.0
-    @State var opacityValue = 1.0
-    
     var body: some View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
@@ -30,21 +27,14 @@ struct MainSceneView: View {
                 ForEach(0 ..< 3) { number in
                     Button(action: {
                         guessTheFlag.flagTapped(number)
-                        if guessTheFlag.data.correctAnswer == number {
-                            withAnimation {
-                                animationAmount += 360
-                            }
-                        }
-                        opacityValue = 0.2
                         
                     }) {
-                        FlagImage(animationAmount: $animationAmount,
-                                  opacityValue: $opacityValue,
+                        FlagImage(animationAmount: $guessTheFlag.animationAmount,
+                                  opacityValue: $guessTheFlag.opacityValue,
                                   country: guessTheFlag.data.countries[number],
                                   correctAnswer: guessTheFlag.data.correctAnswer == number ? true : false)
                     }
                 }
-                
                 
                 Text("Score is \(guessTheFlag.data.score)")
                     .foregroundColor(.white)
@@ -54,17 +44,10 @@ struct MainSceneView: View {
             }
             .alert(isPresented: $guessTheFlag.data.showingScore) {
                 Alert(title: Text(guessTheFlag.data.scoreTitle), message: Text("Your score is \(guessTheFlag.data.score)"), dismissButton: .default(Text("Continue")) {
-                    self.askQuestion()
+                    guessTheFlag.askQuestion()
                 })
             }
         }
-    }
-        
-    
-    func askQuestion() {
-        guessTheFlag.data.countries.shuffle()
-        guessTheFlag.data.correctAnswer = Int.random(in: 0...2)
-        opacityValue = 1.0
     }
 }
 
