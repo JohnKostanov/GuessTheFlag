@@ -7,8 +7,7 @@
 
 import Foundation
 
-struct DataGame: Identifiable {
-    var id = UUID()
+struct DataGame {
     var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     
     var correctAnswer = Int.random(in: 0...2)

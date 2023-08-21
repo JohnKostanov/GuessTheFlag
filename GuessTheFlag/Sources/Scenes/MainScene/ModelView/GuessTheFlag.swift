@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class GuessTheFlag: ObservableObject { 
     @Published var data = DataGame()
@@ -17,7 +18,7 @@ class GuessTheFlag: ObservableObject {
     init() {
         _ = data.countries.publisher
             .prefix(3)
-            .sink { [unowned self] result in
+            .sink { [unowned self] (result) in
                 countriesToView.append(result)
             }
     }

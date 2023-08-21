@@ -24,16 +24,11 @@ struct MainSceneView: View {
                         .font(.largeTitle)
                         .fontWeight(.black)
                 }
-                ForEach(0 ..< guessTheFlag.countriesToView.count, id: \.self) { number in
-                    Button(action: {
-                        guessTheFlag.flagTapped(number)
-                        
-                    }) {
-                        FlagImage(guessTheFlag: guessTheFlag,
-                                  country: guessTheFlag.data.countries[number],
-                                  isCorrectAnswer: guessTheFlag.data.correctAnswer == number ? true : false)
-                    }
+                
+                ForEach(guessTheFlag.countriesToView, id: \.self) {
+                    Image("\($0)")
                 }
+                
                 
                 Text("Score is \(guessTheFlag.data.score)")
                     .foregroundColor(.white)
