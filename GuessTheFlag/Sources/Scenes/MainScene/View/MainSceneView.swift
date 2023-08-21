@@ -24,7 +24,7 @@ struct MainSceneView: View {
                         .font(.largeTitle)
                         .fontWeight(.black)
                 }
-                ForEach(0 ..< 3) { number in
+                ForEach(0 ..< guessTheFlag.countriesToView.count, id: \.self) { number in
                     Button(action: {
                         guessTheFlag.flagTapped(number)
                         

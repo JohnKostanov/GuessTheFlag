@@ -9,10 +9,18 @@ import SwiftUI
 
 class GuessTheFlag: ObservableObject { 
     @Published var data = DataGame()
+    @Published var countriesToView = [String]()
     
     @Published var animationAmount = 0.0
     @Published var opacityValue = 1.0
     
+    init() {
+        _ = data.countries.publisher
+            .prefix(3)
+            .sink { [unowned self] result in
+                countriesToView.append(result)
+            }
+    }
     
     func flagTapped(_ number: Int) {
         if number == data.correctAnswer {

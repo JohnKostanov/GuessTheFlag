@@ -118,9 +118,9 @@
 		E1B5CD9B2A90A42400003633 /* MainScene */ = {
 			isa = PBXGroup;
 			children = (
+				E1B5CD9C2A90A43F00003633 /* Model */,
 				E1B5CD9E2A90A45F00003633 /* ModelView */,
 				E1B5CD9D2A90A44800003633 /* View */,
-				E1B5CD9C2A90A43F00003633 /* Model */,
 			);
 			path = MainScene;
 			sourceTree = "<group>";
