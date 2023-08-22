@@ -19,22 +19,28 @@ struct MainSceneView: View {
                 VStack {
                     Text("Tap the flag of")
                         .foregroundColor(.white)
-                    Text(guessTheFlag.data.countries[guessTheFlag.data.correctAnswer])
+                    Text(guessTheFlag.correctAnswerToView)
                         .foregroundColor(.white)
                         .font(.largeTitle)
                         .fontWeight(.black)
                 }
                 
-                ForEach(guessTheFlag.countriesToView, id: \.self) {
-                    Image("\($0)")
+                ForEach(guessTheFlag.countriesToView, id: \.self) { country in
+                    Button {
+                        guessTheFlag.flagTapped(country)
+                    } label: {
+                        Image(country)
+                    }
                 }
-                
                 
                 Text("Score is \(guessTheFlag.data.score)")
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .fontWeight(.black)
                 Spacer()
+            }
+            .onAppear {
+                guessTheFlag.startGame()
             }
             .alert(isPresented: $guessTheFlag.data.showingScore) {
                 Alert(title: Text(guessTheFlag.data.scoreTitle), message: Text("Your score is \(guessTheFlag.data.score)"), dismissButton: .default(Text("Continue")) {
