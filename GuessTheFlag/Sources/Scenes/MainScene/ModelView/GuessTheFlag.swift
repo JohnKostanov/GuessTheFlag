@@ -19,6 +19,8 @@ class GuessTheFlag: ObservableObject {
     @Published var animationAmount = 0.0
     @Published var opacityValue = 1.0
     
+    @Published var isFlagTapped = false
+    
     var cancellable: AnyCancellable?
     
     func startGame() {
@@ -32,6 +34,7 @@ class GuessTheFlag: ObservableObject {
     }
     
     func flagTapped(_ country: String) {
+        isFlagTapped = true
         if country == correctAnswerToView {
             scoreTitle = "Correct"
             data.score += 1
@@ -59,6 +62,7 @@ class GuessTheFlag: ObservableObject {
         data.countries.shuffle()
         startGame()
         opacityValue = 1.0
+        isFlagTapped = false
     }
 }
 

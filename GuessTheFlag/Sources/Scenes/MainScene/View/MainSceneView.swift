@@ -34,6 +34,7 @@ struct MainSceneView: View {
                                   country: country,
                                   isCorrectAnswer: country == guessTheFlag.correctAnswerToView)
                     }
+                    .disabled(guessTheFlag.isFlagTapped)
                 }
                 Spacer()
                 Text("Score is \(guessTheFlag.data.score)")
