@@ -22,7 +22,6 @@ struct FlagImage: View {
                 .opacity(guessTheFlag.opacityValue).animation(.easeInOut(duration: 1),
                                                               value: guessTheFlag.opacityValue)
         }
-    
     }
 }
 

@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-import Combine
 
 class GuessTheFlag: ObservableObject { 
     @Published var data = DataGame()
@@ -21,8 +20,6 @@ class GuessTheFlag: ObservableObject {
     
     @Published var isFlagTapped = false
     
-    var cancellable: AnyCancellable?
-    
     func startGame() {
         countriesToView.removeAll()
         _ = data.countries.publisher
@@ -30,7 +27,9 @@ class GuessTheFlag: ObservableObject {
             .sink { [unowned self] (result) in
                 countriesToView.append(result)
             }
-        correctAnswerToView = countriesToView.randomElement() ?? ""
+        countriesToView.shuffled().publisher
+            .dropFirst()
+            .assign(to: &$correctAnswerToView)
     }
     
     func flagTapped(_ country: String) {
@@ -51,11 +50,10 @@ class GuessTheFlag: ObservableObject {
         
         scoreTitle += "\n This is country name: \(country)"
         
-        cancellable = countriesToView.publisher
-            .delay(for: .seconds(1), scheduler: RunLoop.main)
-            .sink { [unowned self] _ in
-                showingScore = true
-            }
+        $isFlagTapped
+            .delay(for: 1, scheduler: RunLoop.main)
+            .assign(to: &$showingScore)
+        
     }
     
     func askQuestion() {
