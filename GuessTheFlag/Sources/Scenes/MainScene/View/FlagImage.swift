@@ -19,7 +19,8 @@ struct FlagImage: View {
                 .rotation3DEffect(.degrees(guessTheFlag.animationAmount), axis: (x: 1, y: 0, z: 0))
         } else {
             ImageContent(country: country)
-                .opacity(guessTheFlag.opacityValue).animation(.easeInOut(duration: 1), value: guessTheFlag.opacityValue)
+                .opacity(guessTheFlag.opacityValue).animation(.easeInOut(duration: 1),
+                                                              value: guessTheFlag.opacityValue)
         }
     
     }

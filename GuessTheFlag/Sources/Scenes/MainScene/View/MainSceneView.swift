@@ -15,24 +15,27 @@ struct MainSceneView: View {
         ZStack {
             LinearGradient(gradient: Gradient(colors: [.blue, .black]), startPoint: .top, endPoint: .bottom)
                 .edgesIgnoringSafeArea(.all)
+            
             VStack(spacing: 30) {
+                Spacer()
                 VStack {
                     Text("Tap the flag of")
-                        .foregroundColor(.white)
                     Text(guessTheFlag.correctAnswerToView)
-                        .foregroundColor(.white)
                         .font(.largeTitle)
                         .fontWeight(.black)
                 }
-                
+                .foregroundColor(.white)
+                Spacer()
                 ForEach(guessTheFlag.countriesToView, id: \.self) { country in
                     Button {
                         guessTheFlag.flagTapped(country)
                     } label: {
-                        Image(country)
+                        FlagImage(guessTheFlag: guessTheFlag,
+                                  country: country,
+                                  isCorrectAnswer: country == guessTheFlag.correctAnswerToView)
                     }
                 }
-                
+                Spacer()
                 Text("Score is \(guessTheFlag.data.score)")
                     .foregroundColor(.white)
                     .font(.largeTitle)
@@ -42,8 +45,8 @@ struct MainSceneView: View {
             .onAppear {
                 guessTheFlag.startGame()
             }
-            .alert(isPresented: $guessTheFlag.data.showingScore) {
-                Alert(title: Text(guessTheFlag.data.scoreTitle), message: Text("Your score is \(guessTheFlag.data.score)"), dismissButton: .default(Text("Continue")) {
+            .alert(isPresented: $guessTheFlag.showingScore) {
+                Alert(title: Text(guessTheFlag.scoreTitle), message: Text("Your score is \(guessTheFlag.data.score)"), dismissButton: .default(Text("Continue")) {
                     guessTheFlag.askQuestion()
                 })
             }
